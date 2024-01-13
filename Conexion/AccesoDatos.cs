@@ -12,7 +12,7 @@ namespace Conexion
         private SqlConnection conexion;
         private SqlCommand comando;
         private SqlDataReader lector;
-
+        //lalalllalalalallalalala
         public SqlDataReader Lector
 
         {
