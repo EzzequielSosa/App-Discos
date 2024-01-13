@@ -76,8 +76,12 @@ namespace Conexion
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta(" insert into DISCOS (Titulo, CantidadCanciones, UrlImagenTapa, IdEstilo ) values ('" + nuevo.titulo + "'," + nuevo.cantCan +", '" + nuevo.UrlImagen +"', @IdEstilo)");
-                datos.setearParametro("@IdEstilo", 2);
+                datos.setearConsulta(" insert into DISCOS (Titulo, CantidadCanciones, UrlImagenTapa, IdEstilo ) values (@Titilo, @CantidadCanciones, @UrlImagenTapa,@IdEstilo)");
+                datos.setearParametro("@IdEstilo", nuevo.Ritmo);
+                datos.setearParametro("@Titulo", nuevo.titulo);
+                datos.setearParametro("@CantidadCanciones", nuevo.cantCan);
+                datos.setearParametro("@UrlImagenTapa", nuevo.UrlImagen);
+                
               //  datos.setearParametro("@UrlImagenTapa", nuevo.UrlImagen);
                 datos.ejecutarAccion();
             }
@@ -89,9 +93,30 @@ namespace Conexion
             finally { datos.cerrarConexion(); }
 
         }
-        public void modificar() 
+        public void modificar(Discos Dis) 
         {
+            AccesoDatos datos = new AccesoDatos();
 
+            try
+            {
+                datos.setearConsulta("update DISCOS set  Titulo = @Titulo, CantidadCanciones = @CantidadCanciones, UrlImagenTapa = @UrlImagenTapa, IdEstilo = @IdEstilo where Id = @Id");
+                datos.setearParametro("@Titulo", Dis.titulo);
+                datos.setearParametro("@CantidadCanciones", Dis.cantCan);
+                datos.setearParametro("@UrlImagenTapa", Dis.UrlImagen);
+                datos.setearParametro("@Id estilo", Dis.Ritmo);
+
+                datos.ejecutarAccion();
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
         }
         
     }

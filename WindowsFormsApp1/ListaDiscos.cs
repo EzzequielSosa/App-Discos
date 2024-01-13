@@ -106,5 +106,14 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void buttonModificar_Click(object sender, EventArgs e)
+        {
+            Discos seleccionado;
+            seleccionado = (Discos)dataGridView_Lista.CurrentRow.DataBoundItem;
+            FormAlta modificar = new FormAlta();
+            modificar.ShowDialog();
+            cargar();
+        }
     }
 }
