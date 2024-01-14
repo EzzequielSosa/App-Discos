@@ -49,6 +49,7 @@ namespace WindowsFormsApp1
                 nuevoDisco.UrlImagen = textBoxUrlImagen.Text;
 
                 nuevoDisco.Ritmo = (Elementos)comboBox1Ritmo.SelectedItem;
+                
 
                 Conectar.agregar(nuevoDisco);
                 MessageBox.Show("¡Agregado Exitosamente!");

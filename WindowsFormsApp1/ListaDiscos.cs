@@ -114,6 +114,7 @@ namespace WindowsFormsApp1
             FormAlta modificar = new FormAlta();
             modificar.ShowDialog();
             cargar();
+            
         }
     }
 }
