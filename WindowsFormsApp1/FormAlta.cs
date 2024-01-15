@@ -28,6 +28,7 @@ namespace WindowsFormsApp1
             {
                 comboBox1Ritmo.DataSource = elementoConexion.listar();
             }
+
             catch (Exception ex)
             {
 

@@ -76,7 +76,7 @@ namespace Conexion
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta(" insert into DISCOS (Titulo, CantidadCanciones, UrlImagenTapa, IdEstilo ) values (@Titilo, @CantidadCanciones, @UrlImagenTapa,@IdEstilo)");
+                datos.setearConsulta(" insert into DISCOS (Titulo, CantidadCanciones, UrlImagenTapa,  ) values (@Titilo, @CantidadCanciones, @UrlImagenTapa,@IdEstilo)");
                 datos.setearParametro("@IdEstilo", nuevo.Ritmo);
                 datos.setearParametro("@Titulo", nuevo.titulo);
                 datos.setearParametro("@CantidadCanciones", nuevo.cantCan);
